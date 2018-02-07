@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('dashboard/register', 'MinerAuth\RegisterController@showRegistrationForm');
+Route::post('dashboard/register', 'MinerAuth\RegisterController@register');
+
+Route::get('/dashboard', function(){
+  return view('dashboard.home');
+});

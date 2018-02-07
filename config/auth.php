@@ -45,6 +45,12 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        //Our new custom driver.
+        'web_miner' => [
+            'driver' => 'session',
+            'provider' => 'sellers',
+        ],
     ],
 
     /*
@@ -74,6 +80,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        //Seller user provider
+        'miners' => [
+            'driver' => 'eloquent',  //We are using eloquent model
+            'model' => App\Seller::class,
+        ],
     ],
 
     /*
